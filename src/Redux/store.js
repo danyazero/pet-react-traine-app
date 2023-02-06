@@ -2,7 +2,7 @@ import {combineReducers} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import mainPageReducer from "./mainPageReducer";
 import menuReducer from "./menuReducer";
-import {reduxForm} from "redux-form";
+import {reducer as reduxForm} from "redux-form";
 import authReducer from "./authReducer";
 import workoutsPageReducer from "./workoutsPageReducer";
 

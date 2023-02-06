@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import Workouts from "./Workouts";
+import {addExerciseToWorkout} from "../../Redux/workoutsPageReducer";
 
 function mapStateToProps(state){
     return{
@@ -9,6 +10,9 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return{
+        addExercise(id, array){
+            dispatch(addExerciseToWorkout({id, array}))
+        },
 
     }
 }

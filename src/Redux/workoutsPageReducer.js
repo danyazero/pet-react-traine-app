@@ -8,6 +8,7 @@ const workoutsPageReducer = createSlice({
         workouts: [
             {
                 name: "My usual",
+                isEdit: true,
                 exercises: [
                     {name: "Push up", weight: 0, count: 12, sets: 4},
                     {name: "Bicep Curl", weight: 8, count: 6, sets: 4},
@@ -15,6 +16,7 @@ const workoutsPageReducer = createSlice({
             },
             {
                 name: "Second workout",
+                isEdit: false,
                 exercises: [
                     {name: "Push up", weight: 0, count: 12, sets: 4},
                     {name: "Bicep Curl", weight: 12, count: 6, sets: 4},
@@ -24,8 +26,15 @@ const workoutsPageReducer = createSlice({
             }
         ]
     },
-    reducers: {}
+    reducers: {
+        addExerciseToWorkout(state, action){
+            state.workouts[action.payload.id].exercises.push(action.payload.array)
+
+
+            return state;
+        }
+    }
 })
 
 export default workoutsPageReducer.reducer;
-export const {} = workoutsPageReducer.actions;
+export const {addExerciseToWorkout} = workoutsPageReducer.actions;

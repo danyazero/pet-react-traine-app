@@ -4,12 +4,12 @@ import WorkoutCard from "../WorkoutCard/WorkoutCard";
 
 const Workouts = ({workouts, ...props}) => {
 
-    const workoutsArray = workouts.map((el, id) => <WorkoutCard name={el.name} exercises={el.exercises}/>)
+    const workoutsArray = workouts.map((el, id) => <WorkoutCard id={id} addExercise={props.addExercise} name={el.name} isEdit={el.isEdit} key={id} exercises={el.exercises}/>)
 
     return(
         <div className={st.content}>
             <div>
-                <h1 className={st.headText}>Overview</h1>
+                <h1 className={st.headText}>Workouts</h1>
             </div>
             <div className={st.addButton}>Add workout</div>
 

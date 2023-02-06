@@ -10,3 +10,74 @@
 .workoutName{
     margin: 0px;
 }
+
+.editButton{
+    display: flex;
+    background: #acd0df;
+    padding: 3px;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+}
+
+.editImage{
+    width: 25px;
+    height: 25px;
+}
+
+.editButtonText{
+    display: none;
+    margin: 0px;
+}
+
+.editButton:hover .editButtonText{
+    display: block;
+    margin: 0px 5px 0px 0px;
+}
+
+.headerArea{
+    display: flex;
+    justify-content: space-between;
+}
+
+.setsInput{
+    width: 30px;
+}
+
+.nameInput{
+    width: 45vh;
+}
+
+input{
+    display: flex;
+    background: #f6f7fb;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+}
+
+.repsAndWeightArea{
+    display: flex;
+    gap: 8px;
+}
+
+.editArea{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: flex-start;
+}
+
+.addButton{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 15px;
+    border: none;
+    background: #acd0df;
+    align-items: center;
+}
+
+.addImage{
+    width: 40px;
+}
