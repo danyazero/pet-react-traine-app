@@ -2,7 +2,11 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const menuReducer = createSlice({
     name : "menureducer",
-    initialState: {},
+    initialState: {
+        isLoading: false,
+        isAuth: false,
+        userData: []
+    },
     reducers: {}
 })
 
