@@ -4,11 +4,13 @@ import mainPageReducer from "./mainPageReducer";
 import menuReducer from "./menuReducer";
 import {reduxForm} from "redux-form";
 import authReducer from "./authReducer";
+import workoutsPageReducer from "./workoutsPageReducer";
 
 
 let reducers = combineReducers({
         mainReducer: mainPageReducer,
         menuReducers: menuReducer,
+        workoutsReducers: workoutsPageReducer,
         auth: authReducer,
         form: reduxForm,
     }

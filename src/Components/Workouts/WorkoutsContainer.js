@@ -3,7 +3,7 @@ import Workouts from "./Workouts";
 
 function mapStateToProps(state){
     return{
-    
+        workouts: state.workoutsReducers.workouts
     }
 }
 

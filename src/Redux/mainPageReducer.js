@@ -3,7 +3,9 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const mainReducer = createSlice({
         name: "mainReducer",
-        initialState: {},
+        initialState: {
+            isStarted: false,
+        },
     reducers: {}
     }
 )

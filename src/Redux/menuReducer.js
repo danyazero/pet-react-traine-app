@@ -4,8 +4,6 @@ const menuReducer = createSlice({
     name : "menureducer",
     initialState: {
         isLoading: false,
-        isAuth: false,
-        userData: []
     },
     reducers: {}
 })

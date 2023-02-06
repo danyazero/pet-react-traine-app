@@ -2,7 +2,11 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const authReducer = createSlice({
     name : "authReducer",
-    initialState: {},
+    initialState: {
+        name: "Danya",
+        surname: "Mozzhukhin",
+        isAuth: false
+    },
     reducers: {}
 })
 

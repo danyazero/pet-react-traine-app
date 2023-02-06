@@ -1,0 +1,17 @@
+.exercisesItem{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.setsText{
+    font-weight: bold;
+}
+
+.weightAndRepstext{
+
+}
+
+.nameText{
+    width: 40%;
+}
