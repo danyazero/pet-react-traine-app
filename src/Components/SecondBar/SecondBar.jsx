@@ -4,7 +4,9 @@ import st from "./SecondBar.module.css"
 const SecondBar = (props) => {
     return(
         <div className={st.secondBar}>
-            Some text
+            <div className={st.innerCard}>
+                Some text...
+            </div>
         </div>
     )
 };

@@ -1,5 +1,16 @@
 .secondBar{
     grid-area: secondBar;
     background: #acd0df;
-    padding: 15px;
+    padding: 4vh;
+}
+
+.innerCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 55px;
+
+    height: 350px;
 }
