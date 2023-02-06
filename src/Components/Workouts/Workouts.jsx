@@ -4,7 +4,7 @@ import WorkoutCard from "../WorkoutCard/WorkoutCard";
 
 const Workouts = ({workouts, ...props}) => {
 
-    const workoutsArray = workouts.map((el, id) => <WorkoutCard id={id} addExercise={props.addExercise} name={el.name} isEdit={el.isEdit} key={id} exercises={el.exercises}/>)
+    const workoutsArray = workouts.map((el, id) => <WorkoutCard id={id} editWorkout={props.editWorkout} addExercise={props.addExercise} name={el.name} isEdit={el.isEdit} key={id} exercises={el.exercises}/>)
 
     return(
         <div className={st.content}>

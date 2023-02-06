@@ -27,6 +27,10 @@ const WorkoutCard = ({name, ...props}) => {
         setNameField("")
     }
 
+    function editButton(){
+        props.editWorkout(props.id, !props.isEdit)
+    }
+
     function editMode() {
         if (props.isEdit) {
             return (
@@ -53,7 +57,7 @@ const WorkoutCard = ({name, ...props}) => {
         <div className={st.workoutCard}>
             <div className={st.headerArea}>
                 <h3 className={st.workoutName}>{name}</h3>
-                <div className={st.editButton}>
+                <div className={st.editButton} onClick={editButton}>
                     <p className={st.editButtonText}>Edit</p>
                     <img className={st.editImage} src={edit} alt={"edit workout"}/>
                 </div>

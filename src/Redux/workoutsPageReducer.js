@@ -30,6 +30,10 @@ const workoutsPageReducer = createSlice({
         addExerciseToWorkout(state, action){
             state.workouts[action.payload.id].exercises.push(action.payload.array)
 
+            return state;
+        },
+        editWorkoutReducer(state, action){
+            state.workouts[action.payload.id].isEdit = action.payload.status;
 
             return state;
         }
@@ -37,4 +41,4 @@ const workoutsPageReducer = createSlice({
 })
 
 export default workoutsPageReducer.reducer;
-export const {addExerciseToWorkout} = workoutsPageReducer.actions;
+export const {addExerciseToWorkout, editWorkoutReducer} = workoutsPageReducer.actions;
