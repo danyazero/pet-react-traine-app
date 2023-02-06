@@ -1,0 +1,18 @@
+.content{
+    padding: 10vh;
+}
+
+.headText{
+    margin: 0px;
+    font-family: venus, serif;
+    padding-bottom: 5vh;
+}
+
+.addButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #abd0df;
+    padding: 15px;
+    border-radius: 35px;
+}

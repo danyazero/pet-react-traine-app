@@ -3,6 +3,7 @@ import st from "./Menu.module.css"
 import home from "./src/home.svg"
 import workouts from "./src/workouts.svg"
 import avatar from "./src/avatar.png"
+import {NavLink} from "react-router-dom";
 
 const Menu = (props) => {
     return(
@@ -13,13 +14,13 @@ const Menu = (props) => {
             </div>
 
             <div className={st.menuItems}>
-                <div className={st.menuItem + " " + st.selected}>
+                <NavLink to={"/"} className={st.menuItem}>
                     <img className={st.itemImage} src={home} alt={"home button"}/>
-                </div>
+                </NavLink>
 
-                <div className={st.menuItem}>
+                <NavLink to={"/workouts"} className={st.menuItem}>
                     <img className={st.itemImage} src={workouts} alt={"workouts button"}/>
-                </div>
+                </NavLink>
             </div>
         </div>
     )
