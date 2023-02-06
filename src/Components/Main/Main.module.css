@@ -1,0 +1,9 @@
+.headText{
+    margin: 0px;
+    font-family: venus, serif;
+}
+
+.content{
+    grid-area: content;
+    padding: 10vh;
+}

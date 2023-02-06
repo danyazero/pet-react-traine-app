@@ -1,6 +1,11 @@
 .App {
   display: grid;
-  grid-template-areas: "menu content";
-  grid-template-columns: 80px 8fr;
+  grid-template-areas: "menu content secondBar";
+  grid-template-columns: 80px 8fr 2fr;
+}
+
+@font-face {
+  font-family: venus;
+  src: url(fonts/venusRising.otf);
 }
 
