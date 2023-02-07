@@ -8,7 +8,7 @@ const workoutsPageReducer = createSlice({
         workouts: [
             {
                 name: "My usual",
-                isEdit: true,
+                isEdit: false,
                 exercises: [
                     {name: "Push up", weight: 0, count: 12, sets: 4},
                     {name: "Bicep Curl", weight: 8, count: 6, sets: 4},
@@ -32,6 +32,15 @@ const workoutsPageReducer = createSlice({
 
             return state;
         },
+        deleteExerciseToWorkout(state, action){
+            state.workouts[action.payload.workoutId].exercises.splice(action.payload.exerciseId, 1)
+
+            if (state.workouts[action.payload.workoutId].exercises.length === 0){
+                state.workouts.splice(action.payload.workoutId, 1)
+            }
+
+            return state;
+        },
         editWorkoutReducer(state, action){
             state.workouts[action.payload.id].isEdit = action.payload.status;
 
@@ -41,4 +50,4 @@ const workoutsPageReducer = createSlice({
 })
 
 export default workoutsPageReducer.reducer;
-export const {addExerciseToWorkout, editWorkoutReducer} = workoutsPageReducer.actions;
+export const {addExerciseToWorkout, editWorkoutReducer, deleteExerciseToWorkout} = workoutsPageReducer.actions;

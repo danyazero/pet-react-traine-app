@@ -13,7 +13,7 @@ const WorkoutCard = ({name, ...props}) => {
     const [weightField, setWeightField] = useState("")
     const [repsField, setRepsField] = useState("")
 
-    const onSubmit = () =>{
+    const onSubmit = () => {
         let data = {
             name: nameField,
             weight: weightField,
@@ -27,31 +27,36 @@ const WorkoutCard = ({name, ...props}) => {
         setNameField("")
     }
 
-    function editButton(){
+    function editButton() {
         props.editWorkout(props.id, !props.isEdit)
     }
 
     function editMode() {
         if (props.isEdit) {
             return (
-                    <div className={st.editArea}>
-                        <input className={st.setsInput} placeholder="Sets" value={setsField} onChange={(event)=>{
-                            setSetsField(event.target.value)
-                        }}/>
+                <div className={st.editArea}>
+                    <input className={st.setsInput} placeholder="Sets" value={setsField} onChange={(event) => {
+                        setSetsField(event.target.value)
+                    }}/>
 
-                        <input className={st.nameInput} value={nameField} onChange={(e) => setNameField(e.target.value)} placeholder="Name"/>
-                        <div className={st.repsAndWeightArea}>
-                            <input className={st.setsInput} value={weightField} onChange={e => setWeightField(e.target.value)} placeholder="Weight"/>
-                            <input className={st.setsInput} value={repsField} onChange={e => setRepsField(e.target.value)} placeholder="Reps"/>
-                            <button onClick={onSubmit} className={st.addButton}><img className={st.addImage} src={add} alt={"add button"}/>
-                            </button>
-                        </div>
+                    <input className={st.nameInput} value={nameField} onChange={(e) => setNameField(e.target.value)}
+                           placeholder="Name"/>
+                    <div className={st.repsAndWeightArea}>
+                        <input className={st.setsInput} value={weightField}
+                               onChange={e => setWeightField(e.target.value)} placeholder="Weight"/>
+                        <input className={st.setsInput} value={repsField} onChange={e => setRepsField(e.target.value)}
+                               placeholder="Reps"/>
+                        <button onClick={onSubmit} className={st.addButton}><img className={st.addImage} src={add}
+                                                                                 alt={"add button"}/>
+                        </button>
                     </div>
+                </div>
             )
         }
     }
 
-    const exercises = props.exercises.map((el, id) => <Exercises key={id} name={el.name} weight={el.weight}
+    const exercises = props.exercises.map((el, id) => <Exercises key={id} isEdit={props.isEdit} workoutId={props.id} id={id} deleteExercise={props.deleteExercise}
+                                                                 name={el.name} weight={el.weight}
                                                                  count={el.count} sets={el.sets}/>)
     return (
         <div className={st.workoutCard}>

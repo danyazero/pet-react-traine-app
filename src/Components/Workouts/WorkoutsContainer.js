@@ -1,6 +1,11 @@
 import {connect} from "react-redux";
 import Workouts from "./Workouts";
-import {addExerciseToWorkout, editWorkout, editWorkoutReducer} from "../../Redux/workoutsPageReducer";
+import {
+    addExerciseToWorkout,
+    deleteExerciseToWorkout,
+    editWorkout,
+    editWorkoutReducer
+} from "../../Redux/workoutsPageReducer";
 
 function mapStateToProps(state){
     return{
@@ -15,6 +20,9 @@ function mapDispatchToProps(dispatch){
         },
         editWorkout(id, status){
             dispatch(editWorkoutReducer({id, status}))
+        },
+        deleteExercise(workoutId, exerciseId){
+            dispatch(deleteExerciseToWorkout({workoutId, exerciseId}))
         }
     }
 }
