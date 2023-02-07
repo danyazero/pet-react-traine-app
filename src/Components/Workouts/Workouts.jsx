@@ -11,7 +11,7 @@ const Workouts = ({workouts, ...props}) => {
             <div>
                 <h1 className={st.headText}>Workouts</h1>
             </div>
-            <div className={st.addButton}>Add workout</div>
+            <div onClick={props.addNewWorkout} className={st.addButton}>Add workout</div>
 
             {workoutsArray}
         </div>

@@ -43,6 +43,17 @@ const workoutsPageReducer = createSlice({
         },
         editWorkoutReducer(state, action){
             state.workouts[action.payload.id].isEdit = action.payload.status;
+            state.workouts[action.payload.id].name = action.payload.workoutName;
+
+            return state;
+        },
+        addNewWorkoutReducer(state, action){
+            const data = {
+                name: Math.random().toString(36).slice(2, 7),
+                isEdit: true,
+                exercises: []
+            }
+            state.workouts.push(data)
 
             return state;
         }
@@ -50,4 +61,4 @@ const workoutsPageReducer = createSlice({
 })
 
 export default workoutsPageReducer.reducer;
-export const {addExerciseToWorkout, editWorkoutReducer, deleteExerciseToWorkout} = workoutsPageReducer.actions;
+export const {addExerciseToWorkout, editWorkoutReducer, deleteExerciseToWorkout, addNewWorkoutReducer} = workoutsPageReducer.actions;

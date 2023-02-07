@@ -12,23 +12,38 @@ const WorkoutCard = ({name, ...props}) => {
     const [nameField, setNameField] = useState("")
     const [weightField, setWeightField] = useState("")
     const [repsField, setRepsField] = useState("")
+    const [workoutName, setWorkoutName] = useState(name)
 
     const onSubmit = () => {
-        let data = {
-            name: nameField,
-            weight: weightField,
-            count: repsField,
-            sets: setsField
+        if (nameField && weightField && repsField && setsField){
+            let data = {
+                name: nameField,
+                weight: weightField,
+                count: repsField,
+                sets: setsField
+            }
+            props.addExercise(props.id, data)
+            setSetsField("")
+            setRepsField("")
+            setWeightField("")
+            setNameField("")
         }
-        props.addExercise(props.id, data)
-        setSetsField("")
-        setRepsField("")
-        setWeightField("")
-        setNameField("")
     }
 
     function editButton() {
-        props.editWorkout(props.id, !props.isEdit)
+        props.editWorkout(props.id, !props.isEdit, workoutName)
+    }
+
+    function editWorkoutName(){
+        if (props.isEdit){
+            return (
+                <input className={st.nameInput} placeholder="Workout Name" value={workoutName} onChange={(event) => {
+                    setWorkoutName(event.target.value)
+                }}/>
+            )
+        }else {
+            return <h3 className={st.workoutName}>{name}</h3>
+        }
     }
 
     function editMode() {
@@ -61,7 +76,7 @@ const WorkoutCard = ({name, ...props}) => {
     return (
         <div className={st.workoutCard}>
             <div className={st.headerArea}>
-                <h3 className={st.workoutName}>{name}</h3>
+                {editWorkoutName()}
                 <div className={st.editButton} onClick={editButton}>
                     <p className={st.editButtonText}>Edit</p>
                     <img className={st.editImage} src={edit} alt={"edit workout"}/>

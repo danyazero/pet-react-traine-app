@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import Workouts from "./Workouts";
 import {
-    addExerciseToWorkout,
+    addExerciseToWorkout, addNewWorkoutReducer,
     deleteExerciseToWorkout,
     editWorkout,
     editWorkoutReducer
@@ -18,11 +18,14 @@ function mapDispatchToProps(dispatch){
         addExercise(id, array){
             dispatch(addExerciseToWorkout({id, array}))
         },
-        editWorkout(id, status){
-            dispatch(editWorkoutReducer({id, status}))
+        editWorkout(id, status, workoutName){
+            dispatch(editWorkoutReducer({id, status, workoutName}))
         },
         deleteExercise(workoutId, exerciseId){
             dispatch(deleteExerciseToWorkout({workoutId, exerciseId}))
+        },
+        addNewWorkout(){
+            dispatch(addNewWorkoutReducer())
         }
     }
 }
